@@ -1,0 +1,139 @@
+html {
+    background: linear-gradient(90deg, #4169E1, #0000CD);
+    font-family: Tahoma;
+}
+
+.main input::-webkit-outer-spin-button,
+.main input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.main input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.mainContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 300px;
+    height: 300px;
+    background-color: #28287c7e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #5151ff;
+    transition: 0.3s;
+}
+
+.main:hover {
+    transform: scale(1.1);
+}
+
+.main h2 {
+    color: white;
+    cursor: default;
+}
+
+.main button {
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid #2a2aa3;
+    background-color: #4169e163;
+    border-radius: 6px;
+    color: #cac3e9;
+    transition: 0.3s;
+}
+
+.main button:hover {
+    transform: scale(1.2);
+}
+
+.main button:active {
+    transform: scale(1.3);
+    border: 2px solid #4343ec;
+    background-color: #4169e163;
+}
+
+.main input {
+    width: 150px;
+    height: 20px;
+    font-size: 16px;
+    border: 2px solid #2a2aa3;
+    outline: none;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: #4169e163;
+    text-align: center;
+    color: #cac3e9;
+    transition: 0.3s;
+}
+.main input:focus {
+    border: 2px solid #4e4ef3;
+}
+
+.main input:hover {
+    transform: scale(1.2);
+}
+
+.main input::placeholder {
+    color: #7777ff;
+}
+
+.label {
+    display: flex;
+    font-size: xx-large;
+    justify-content: center;
+    background-color: #00005056;
+    border: 1px solid #2a2aa3;
+    width: 200px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.slot {
+    width: 66px;
+    height: 64px;
+}
+
+.fixedconteiner {
+  position: fixed;
+  top: 10px;
+  right: 30px;
+  z-index: 9999;
+}
+
+#cashLabel {
+    width: auto;
+    height: 40px;
+    color: white;
+    background-color: #4169e163;
+    border: 1px solid #5151ff;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 0.3s;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cashLabel:hover {
+    transform: scale(1.2);
+}
