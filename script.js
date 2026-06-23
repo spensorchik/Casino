@@ -42,6 +42,7 @@ function updateCashLabel () {
 play.onclick = function () {
     if (play.textContent != "!!") {
         const stavka = inp.value
+        if (stavka < 0) {return}
         if (stavka > cash && stavka == 0) {
             inp.style.color = "red"
         } else if (stavka == "") {
