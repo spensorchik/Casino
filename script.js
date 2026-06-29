@@ -4,7 +4,18 @@ const s2 = document.querySelector("#slot2")
 const s3 = document.querySelector("#slot3")
 const inp = document.querySelector("#input")
 const cashLabel = document.querySelector("#cashLabel")
-let cash = 1000
+let StartCashValue = 1000
+let cash = localStorage.getItem("Casino_cash") || StartCashValue
+
+if (!cash) {
+    cash = StartCashValue
+    localStorage.setItem("Casino_cash", cash)
+}
+
+if (cash == 0) {
+    cash = StartCashValue
+    localStorage.setItem("Casino_cash", cash)
+}
 
 const slots = [
     //(~50%)
@@ -38,6 +49,10 @@ function updateCashLabel () {
     cashLabel.textContent = `${cash}$`
 }
 
+function saveCash () {
+    localStorage.setItem("Casino_cash", cash)
+}
+
 
 play.onclick = function () {
     if (play.textContent != "!!") {
@@ -61,19 +76,23 @@ play.onclick = function () {
                     cash += stavka * 5
                     inp.style.color = "green"
                     updateCashLabel()
+                    saveCash()
                 }  else if (s1.textContent == s2.textContent && s1.textContent == s3.textContent && s2.textContent == s3.textContent) {
                     cash += stavka * 2
                     inp.style.color = "green"
                     updateCashLabel()
+                    saveCash()
                 } else if (s1.textContent == s2.textContent || s2.textContent == s3.textContent) {
                     cash += stavka * 1.5
                     inp.style.color = "green"
                     updateCashLabel()
+                    saveCash()
                 } else if (s1.textContent == s2.textContent || s1.textContent == s3.textContent || s2.textContent == s3.textContent) {
                     inp.style.color = "yellow"
                 } else {
                     cash -= stavka
                     updateCashLabel()
+                    saveCash()
                     inp.style.color = "red"
                 }
                 play.textContent = "Крутка"
