@@ -5,7 +5,7 @@ const s3 = document.querySelector("#slot3")
 const inp = document.querySelector("#input")
 const cashLabel = document.querySelector("#cashLabel")
 let StartCashValue = 1000
-let cash = localStorage.getItem("Casino_cash") || StartCashValue
+let cash = Number(localStorage.getItem("Casino_cash") || StartCashValue)
 
 if (!cash) {
     cash = StartCashValue
@@ -56,7 +56,7 @@ function saveCash () {
 
 play.onclick = function () {
     if (play.textContent != "!!") {
-        const stavka = inp.value
+        const stavka = Number(inp.value)
         if (stavka < 0) {return}
         if (stavka > cash && stavka == 0) {
             inp.style.color = "red"
